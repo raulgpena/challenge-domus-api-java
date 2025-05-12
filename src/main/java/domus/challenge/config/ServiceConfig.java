@@ -23,5 +23,5 @@ import org.springframework.context.annotation.Configuration;
  *  @see ComponentScan
  * */
 @Configuration
-//@ComponentScan(basePackages = {"domus.challenge.service.support"})
+@ComponentScan(basePackages = {"domus.challenge.service.support"})
 public class ServiceConfig { }

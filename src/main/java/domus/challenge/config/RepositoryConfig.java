@@ -25,6 +25,6 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
  *  @see EntityScan
  * */
 @Configuration
-//@EntityScan(basePackages = "domus.challenge.entity")
-//@EnableJpaRepositories(basePackages = {"domus.challenge.repository"})
+@EntityScan(basePackages = "domus.challenge.entity")
+@EnableJpaRepositories(basePackages = {"domus.challenge.repository"})
 public class RepositoryConfig { }
