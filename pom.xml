@@ -40,7 +40,7 @@
         <lombok.version>1.18.38</lombok.version>
         <swagger.version>3.0.0</swagger.version>
         <flyway.version>9.0.0</flyway.version>
-        <h2.version>2.1.210</h2.version>
+        <h2.version>2.2.220</h2.version>
         <maven.compiler.forceJavacCompilerUse>true</maven.compiler.forceJavacCompilerUse>
     </properties>
 
