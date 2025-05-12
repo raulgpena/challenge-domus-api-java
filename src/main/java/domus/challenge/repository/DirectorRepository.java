@@ -50,6 +50,6 @@ public interface DirectorRepository extends JpaRepository<DirectorEntity, Long> 
      * */
     @Query("SELECT new domus.challenge.model.DirectorDto(d.name, d.lastName) " +
             "FROM DirectorEntity d " +
-            "WHERE SIZE(d.movies) > :movieCount ORDER BY d.name ASC")
+            "WHERE SIZE(d.movies) >= :movieCount ORDER BY d.name ASC")
     List<DirectorDto> findDirectorsWithMoreThanNMovies(@Param("movieCount") int movieCount);
 }

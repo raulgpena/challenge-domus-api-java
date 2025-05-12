@@ -28,5 +28,5 @@ import domus.challenge.entity.GenreEntity;
 @Repository
 public interface GenreRepository extends JpaRepository<GenreEntity, Long> {
 
-    // CRaul Penaom query methods can be defined here if needed
+    // Query methods can be defined here if needed
 }

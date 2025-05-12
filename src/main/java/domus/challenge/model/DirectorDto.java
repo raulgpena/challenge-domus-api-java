@@ -10,6 +10,9 @@ package domus.challenge.model;
 // Package imports from jdk 21.
 import java.util.List;
 
+// Package imports from openapi.
+import io.swagger.v3.oas.annotations.media.Schema;
+
 // Package imports from lombok.
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,9 +30,11 @@ import domus.challenge.entity.MovieEntity;
  *  @since jdk 21
  *  @see Data
  *  @see NoArgsConstructor
+ *  @see Schema
  * */
 @Data
 @NoArgsConstructor
+@Schema(description = "DTO representing a director")
 public class DirectorDto {
 
 
@@ -72,14 +77,18 @@ public class DirectorDto {
 
     // Private fields definition.
     // Id director.
+    @Schema(description = "ID of the director", example = "1")
     private Long id;
 
     // Name director.
+    @Schema(description = "First name of the director", example = "John")
     private String name;
 
     // Last name director.
+    @Schema(description = "Last name of the director", example = "Doe")
     private String lastName;
 
     // List of movies.
+    @Schema(description = "List of movies directed by the director")
     private List<MovieEntity> movies;
 }

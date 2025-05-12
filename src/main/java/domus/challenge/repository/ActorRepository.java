@@ -28,5 +28,5 @@ import domus.challenge.entity.ActorEntity;
 @Repository
 public interface ActorRepository extends JpaRepository<ActorEntity, Long> {
 
-    // CRaul Penaom query methods can be defined here if needed
+    // Query methods can be defined here if needed
 }

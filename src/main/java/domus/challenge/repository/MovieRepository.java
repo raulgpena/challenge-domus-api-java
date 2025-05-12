@@ -28,5 +28,5 @@ import domus.challenge.entity.MovieEntity;
 @Repository
 public interface MovieRepository extends JpaRepository<MovieEntity, Long> {
 
-    // CRaul Penaom query methods can be defined here if needed
+    // Query methods can be defined here if needed
 }

@@ -111,7 +111,9 @@ INSERT INTO directors (name_director, last_name_director) VALUES
 -- Populate the 'movies' table
 INSERT INTO movies (title_movie, year_movie, rated_movie, release_movie, runtime_movie, id_genre, id_director, id_writer) VALUES
                                                                                                                               ('Inception', 2010, 'PG-13', '2010-07-16', 148, 5, 2, 1), -- Sci-Fi, Christopher Nolan, John Doe
-                                                                                                                              ('Pulp Fiction', 1994, 'R', '1994-10-14', 154, 3, 3, 2), -- Drama, Quentin Tarantino, Jane Smith
+                                                                                                                              ('Pulp Fiction', 1994, 'R', '1994-10-14', 154, 3, 3, 2),    -- Drama, Quentin Tarantino, Jane Smith
+                                                                                                                              ('Kill Bill Vol.1', 2003, 'R', '2003-10-01', 154, 3, 3, 2), -- Action, Quentin Tarantino, Jane Smith
+                                                                                                                              ('Kill Bill Vol.2', 2004, 'R', '2004-08-01', 154, 3, 3, 2), -- Action, Quentin Tarantino, Jane Smith
                                                                                                                               ('Forrest Gump', 1994, 'PG-13', '1994-07-06', 142, 3, 1, 3), -- Drama, Steven Spielberg, Robert Brown
                                                                                                                               ('Titanic', 1997, 'PG-13', '1997-12-19', 195, 6, 5, 4), -- Romance, James Cameron, Emily Clark
                                                                                                                               ('The Dark Knight', 2008, 'PG-13', '2008-07-18', 152, 1, 2, 5), -- Action, Christopher Nolan, Michael Johnson

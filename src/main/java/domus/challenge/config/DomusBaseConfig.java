@@ -31,6 +31,7 @@ import org.springframework.context.annotation.Import;
 @Import({
         RepositoryConfig.class,
         ServiceConfig.class,
-        WebConfig.class
+        WebConfig.class,
+        OpenApiConfig.class
 })
 public class DomusBaseConfig { }

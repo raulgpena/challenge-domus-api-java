@@ -19,6 +19,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+// Package imports from io.swagger
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+
 // Package imports from lombok
 import lombok.extern.slf4j.Slf4j;
 
@@ -80,9 +86,20 @@ public class DirectorController {
      *
      *  @see GetMapping
      *  @see RequestParam
+     *  @see Operation
+     *  @see ApiResponses
+     *  @see ApiResponse
      * */
+    @Operation(
+            summary = "Retrieve a list of directors",
+            description = "Retrieves a list of directors with a rating above the specified threshold."
+    )
+    @ApiResponses({
+            @ApiResponse(responseCode = "200", description = "Successfully retrieved the list of directors"),
+            @ApiResponse(responseCode = "400", description = "Invalid threshold value")
+    })
     @GetMapping(produces = { MediaType.APPLICATION_JSON_VALUE })
-    public ResponseEntity<ResponseDirectorDto> getDirectors(@RequestParam("threshold") int threshold) {
+    public ResponseEntity<ResponseDirectorDto> getDirectors(@Parameter(description = "The rating threshold for filtering directors", example = "5") @RequestParam("threshold") int threshold) {
 
         log.info("DOMUS :: Getting directors list :: threshold: {}", threshold);
         if (threshold < 0) {
