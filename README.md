@@ -92,17 +92,17 @@ GET /directors?threshold=4
    ```
    mvn spring-boot:run
    ```
-5. Access the API at `http://localhost:8080`.
+5. Access the API at `http://localhost:8080/challenge/api/v1`.
 
 ## Testing
 Unit tests are included in the `test/java/com/example/domus/DomusBackendChallengeApplicationTests.java` file to verify the functionality of the REST API and service layer.
 
 ## Documentation
-API documentation is generated using Swagger and can be accessed at `http://localhost:8080/swagger-ui.html` after running the application.
+API documentation is generated using Swagger and can be accessed at `http://localhost:8080/challenge/api/v1/swagger-ui.html` after running the application.
 
 ## Considerations
 - Ensure that the H2 database is properly configured in `application.properties`.
 - Flyway will automatically create the necessary database tables on application startup using the SQL script located in `src/main/resources/db/migration`.
 
 ## Conclusion
-This project provides a robRaul Pena solution for retrieving director information based on movie counts, utilizing modern technologies and best practices in software development.
+This project provides a Raul Pena solution for retrieving director information based on movie counts, utilizing modern technologies and best practices in software development.
