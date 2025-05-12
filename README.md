@@ -7,24 +7,31 @@ This project implements a REST API that retrieves information about directors wh
 The project is structured as follows:
 
 ```
-domus-backend-challenge
+challenge-domus-api-java
 ├── src
 │   ├── main
 │   │   ├── java
-│   │   │   └── com
-│   │   │       └── example
-│   │   │           └── domus
-│   │   │               ├── DomusBackendChallengeApplication.java
+│   │   │   └── domus
+│   │   │       └── challenge
+│   │   │               ├── ChallengeApplication.java
 │   │   │               ├── controller
 │   │   │               │   └── DirectorController.java
 │   │   │               ├── service
-│   │   │               │   └── DirectorService.java
+│   │   │               │   ├── support
+│   │   │               │   ├── IDirectorService.java
+                            ├── DirectorServiceSupport.java
 │   │   │               ├── repository
 │   │   │               │   └── DirectorRepository.java
 │   │   │               ├── model
-│   │   │               │   └── Director.java
+│   │   │               │   └── DirectorDto.java
+│   │   │               ├── entity
+│   │   │               │   └── DirectorEntity.java
 │   │   │               └── config
-│   │   │                   └── SwaggerConfig.java
+│   │   │                   ├── RepositoryConfig.java
+│   │   │                   ├── ServiceConfig.java
+│   │   │                   ├── WebConfig.java
+│   │   │                   ├── DomusBaseConfig.java
+│   │   │                   └── OpenApiConfig.java
 │   │   └── resources
 │   │       ├── application.properties
 │   │       └── db

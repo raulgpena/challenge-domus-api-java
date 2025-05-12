@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "b3b33ee7-19d2-429f-8038-e6d33f0cb2c9",
+		"name": "Challenge Domus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1142580"
+	},
+	"item": [
+		{
+			"name": "Get With Data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Check if the response status is 200",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Parse the JSON response",
+							"let jsonData = pm.response.json();",
+							"",
+							"// Validate that the 'directors' property exists and has values",
+							"pm.test(\"'directors' property has values\", function () {",
+							"    pm.expect(jsonData).to.have.property('directors');",
+							"    pm.expect(jsonData.directors).to.be.an('array').that.is.not.empty;",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/challenge/api/v1/directors?threshold=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"challenge",
+						"api",
+						"v1",
+						"directors"
+					],
+					"query": [
+						{
+							"key": "threshold",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Without Data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Check if the response status is 200",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"// Parse the JSON response",
+							"let jsonData = pm.response.json();",
+							"",
+							"// Validate that the 'directors' property exists and has not values",
+							"pm.test(\"'directors' property has not values\", function () {",
+							"    pm.expect(jsonData).to.have.property('directors');",
+							"    pm.expect(jsonData.directors).to.be.an('array').that.is.empty;",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/challenge/api/v1/directors?threshold=-1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"challenge",
+						"api",
+						"v1",
+						"directors"
+					],
+					"query": [
+						{
+							"key": "threshold",
+							"value": "-1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get With Bad Request",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Check if the response status is 400",
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/challenge/api/v1/directors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"challenge",
+						"api",
+						"v1",
+						"directors"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
