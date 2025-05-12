@@ -24,13 +24,19 @@ logging:
     org.springframework: DEBUG
     domus.challenge: DEBUG
 
+
 springdoc:
   api-docs:
-    path: /v3/api-docs       # Path for the OpenAPI JSON
+    path: /v3/api-docs
   swagger-ui:
-    path: /swagger-ui.html   # Path for the Swagger UI
-    operationsSorter: method # Sort operations by HTTP method
-    tagsSorter: alpha        # Sort tags alphabetically
-    display-request-duration: true    # Show request duration in Swagger UI
-    doc-expansion: none               # Collapse all endpoints by default
-    disable-swagger-default-url: true # Disable default Swagger URL
+    path: /swagger-ui.html
+
+
+management:
+  server:
+    port: 8081
+  endpoints:
+    web:
+      base-path: /meta/s
+      exposure:
+        include: "*"
