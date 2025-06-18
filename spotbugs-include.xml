@@ -1,0 +1,8 @@
+<FindBugsFilter>
+    <Match>
+        <Bug category="STYLE" type="NP_NULL_ON_SOME_PATH,NP_NULL_PARAM_DEREF" />
+        <Bug pattern="NP_ALWAYS_NULL,NP_ALWAYS_NULL_EXCEPTION,NP_LOAD_OF_KNOWN_NULL_VALUE" />
+        <Bug pattern="NP_GUARANTEED_DEREF,NP_GUARANTEED_DEREF_ON_EXCEPTION_PATH" />
+        <Bug pattern="NP_NONNULL_PARAM_VIOLATION,NP_NONNULL_RETURN_VIOLATION" />
+    </Match>
+</FindBugsFilter>

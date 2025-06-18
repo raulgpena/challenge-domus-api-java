@@ -120,6 +120,27 @@
                     <target>${java.version}</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>4.8.6.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <effort>Max</effort>
+                    <threshold>Low</threshold>
+                    <failOnError>false</failOnError>
+                    <xmlOutput>true</xmlOutput>
+                    <xmlOutputDirectory>target/spotbugs</xmlOutputDirectory>
+                    <includeFilterFile>spotbugs-include.xml</includeFilterFile> <!-- Optional: to focus on specific bugs like NP_ -->
+                    <excludeFilterFile>spotbugs-exclude.xml</excludeFilterFile> <!-- Optional: to exclude specific warnings -->
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
