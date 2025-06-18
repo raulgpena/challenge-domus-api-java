@@ -9,6 +9,7 @@ package domus.challenge.service.support;
 
 // Package imports from jdk 21.
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 // Package imports from spring framework.
@@ -84,7 +85,11 @@ public class DirectorServiceSupport implements IDirectorService<DirectorDto> {
         log.debug("DOMUS :: Executing query against database to get director list with more than ({}) movies.", movies);
         final List<String> directors = directorRepository.findDirectorsWithMoreThanNMovies(movies)
                 .stream()
-                .map( e -> e.getName().concat(" ").concat(e.getLastName()))
+                .map(e -> {
+                    String name = Optional.ofNullable(e.getName()).orElse("");
+                    String lastName = Optional.ofNullable(e.getLastName()).orElse("");
+                    return name.concat(" ").concat(lastName).trim();
+                })
                 .collect(Collectors.toList());
 
         // Create a ResponseDirectorDto object to hold the response data.
